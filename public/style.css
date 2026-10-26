@@ -501,3 +501,129 @@ html[data-theme="light"] input,html[data-theme="light"] textarea,html[data-theme
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* =====================================================================
+   โหมดสว่าง: จัดสีให้เป็นโทนม่วงเดียวกัน (วางไว้ท้ายไฟล์ ห้ามย้ายขึ้นข้างบน)
+   ===================================================================== */
+html[data-theme="light"]{--bg:#f7f4ff;--s1:rgba(255,255,255,.82);--s2:rgba(91,33,182,.07);--line:rgba(91,33,182,.16);--text:#211633;--muted:#6b5f85;--jade:#7c3aed;--jade-d:#6d28d9;--gold:#b7791f;--sky:#4f6bdc;--rose:#e11d48}
+/* แถบเมนูด้านบน */
+html[data-theme="light"] .sidebar{background:rgba(255,255,255,.92)!important;border-color:rgba(91,33,182,.16)!important;color:#211633;box-shadow:0 14px 40px -16px rgba(76,29,149,.28),inset 0 1px #fff}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .sidebar{background:none!important;border:0!important;box-shadow:none}
+html[data-theme="light"] #navigation{background:transparent!important;border-color:transparent!important}
+html[data-theme="light"] .nav-item{color:#4b3f6b}
+html[data-theme="light"] .nav-item:hover{background:rgba(124,58,237,.1)!important;color:#4c1d95!important}
+html[data-theme="light"] .nav-item.active,html[data-theme="light"] .nav-item[aria-current="page"]{color:#fff!important;background:linear-gradient(135deg,#8b5cf6,#6d28d9)!important;border-color:transparent!important;box-shadow:0 8px 20px -8px rgba(109,40,217,.6)}
+@media(max-width:1440px){html[data-theme="light"] #navigation{background:rgba(255,255,255,.98)!important;border:1px solid rgba(91,33,182,.16)!important}}
+/* หัวตาราง ปุ่มเลือกช่วง ลิงก์ ปุ่มหลัก */
+html[data-theme="light"] table thead,html[data-theme="light"] th{background:transparent!important;color:#6b5f85!important}
+html[data-theme="light"] .seg{background:rgba(124,58,237,.08);border:1px solid rgba(91,33,182,.14)}
+html[data-theme="light"] .seg button{color:#5b4b86}
+html[data-theme="light"] .seg button.on{color:#fff}
+html[data-theme="light"] a{color:#6d28d9}
+html[data-theme="light"] a:hover{color:#4c1d95}
+html[data-theme="light"] .button-primary{background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;box-shadow:0 10px 24px -10px rgba(109,40,217,.7)}
+html[data-theme="light"] .toast-message{background:#fff!important;color:#126e4f!important;border:1px solid rgba(22,163,74,.35)!important;border-left:5px solid #16a34a!important}
+html[data-theme="light"] .toast-message.error{color:#b4234d!important;border-color:rgba(225,29,72,.35)!important;border-left-color:#e11d48!important}
+/* การ์ดต้อนรับและหัวข้อ */
+html[data-theme="light"] .welcome-card{background:radial-gradient(70% 140% at 100% 0%,rgba(250,204,21,.28),transparent 60%),linear-gradient(120deg,#6d28d9,#8b5cf6 70%,#a78bfa);box-shadow:0 26px 50px -28px rgba(109,40,217,.6)}
+html[data-theme="light"] .page-heading h1{background-image:linear-gradient(100deg,#211633 30%,#7c3aed)}
+html[data-theme="light"] .login-decoration h1{background-image:linear-gradient(100deg,#211633 40%,#7c3aed 78%,#b7791f)}
+html[data-theme="light"] .decoration-badge{color:#6d28d9}
+html[data-theme="light"] .feature-list div{color:#4b3f6b}
+/* กราฟ */
+#trend-svg stop{stop-color:var(--jade)}
+html[data-theme="light"] .seg-2{stroke:#16a34a}
+html[data-theme="light"] #trend-svg .grid{stroke:rgba(91,33,182,.14)}
+/* รายการอื่น ๆ */
+html[data-theme="light"] .faq-item[open]{background:rgba(124,58,237,.06)!important}
+html[data-theme="light"] .pal-item.on,html[data-theme="light"] .pal-item:hover{background:rgba(124,58,237,.12)}
+html[data-theme="light"] .notif.un{background:rgba(124,58,237,.1)}
+html[data-theme="light"] .legend li:nth-child(3){--c:#16a34a}
+html[data-theme="light"] .text-button,html[data-theme="light"] .register-switch .text-button{color:#6d28d9}
+html[data-theme="light"] .text-button:hover{background:rgba(124,58,237,.1)}
+
+/* ===== FIX: ให้หน้า Login/Register เปลี่ยนสีครบเมื่อเปิดโหมดสว่าง ===== */
+html[data-theme="light"] body:has(#login-view:not(.hidden)) {
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(196,181,253,.55), transparent 42%),
+    radial-gradient(ellipse at 90% 20%, rgba(165,180,252,.42), transparent 36%),
+    radial-gradient(ellipse at 45% 100%, rgba(253,230,200,.48), transparent 34%),
+    #f8f5ff !important;
+  color: #211633 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .sidebar {
+  background: rgba(255,255,255,.76) !important;
+  border: 1px solid rgba(124,58,237,.14) !important;
+  box-shadow: 0 12px 32px rgba(76,29,149,.10) !important;
+  color: #211633 !important;
+  backdrop-filter: blur(18px) !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .brand h2,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .brand p {
+  color: #302047 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .brand p { opacity: .78; }
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .theme-toggle,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) #theme-toggle {
+  color: #5b21b6 !important;
+  background: rgba(124,58,237,.09) !important;
+  border: 1px solid rgba(124,58,237,.12) !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card {
+  background: rgba(255,255,255,.88) !important;
+  border-color: rgba(124,58,237,.14) !important;
+  box-shadow: 0 24px 60px rgba(76,29,149,.12), inset 0 1px #fff !important;
+  color: #211633 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card h2,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card label,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card .login-note {
+  color: #302047 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card .muted,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card p {
+  color: #716487 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card input,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card textarea,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card select {
+  background: rgba(255,255,255,.96) !important;
+  color: #211633 !important;
+  border-color: #e0d4fa !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card input::placeholder {
+  color: #9184a7 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card .button-primary,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card button[type="submit"] {
+  background: linear-gradient(120deg,#a78bfa,#7c3aed) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card .text-button,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-card .register-switch {
+  color: #6d28d9 !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-decoration h1 {
+  background-image: linear-gradient(100deg,#211633 30%,#7c3aed 75%,#a16207) !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .decoration-badge {
+  color: #6d28d9 !important;
+  background: rgba(124,58,237,.06) !important;
+  border-color: rgba(124,58,237,.18) !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .feature-list div {
+  color: #514366 !important;
+  background: rgba(255,255,255,.72) !important;
+  border-color: rgba(124,58,237,.12) !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .float-card {
+  background: rgba(255,255,255,.94) !important;
+  color: #302047 !important;
+  border-color: rgba(124,58,237,.12) !important;
+  box-shadow: 0 18px 34px rgba(45,25,70,.16) !important;
+}
+html[data-theme="light"] body:has(#login-view:not(.hidden)) footer,
+html[data-theme="light"] body:has(#login-view:not(.hidden)) .login-footer {
+  color: #7c6b91 !important;
+}
